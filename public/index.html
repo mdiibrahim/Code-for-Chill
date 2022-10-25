@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -24,12 +21,19 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2250%22 fill=%22%23ffffff%22></rect><path fill=%22%230d0d0d%22 d=%22M34.97 38.48L34.97 38.48Q34.97 39.86 34.25 40.91Q33.53 41.96 32.57 42.56L32.57 42.56Q31.01 41.54 29.18 40.76Q27.35 39.98 24.83 39.98L24.83 39.98Q20.03 39.98 17.33 43.01Q14.63 46.04 14.63 51.62L14.63 51.62Q14.63 57.38 17.48 60.29Q20.33 63.20 25.31 63.20L25.31 63.20Q27.89 63.20 29.72 62.51Q31.55 61.82 33.11 60.86L33.11 60.86Q34.01 61.58 34.58 62.69Q35.15 63.80 35.15 65.18L35.15 65.18Q35.15 66.38 34.52 67.43Q33.89 68.48 32.33 69.20L32.33 69.20Q31.13 69.80 29.09 70.31Q27.05 70.82 24.05 70.82L24.05 70.82Q20.03 70.82 16.55 69.68Q13.07 68.54 10.49 66.20Q7.91 63.86 6.44 60.23Q4.97 56.60 4.97 51.62L4.97 51.62Q4.97 46.94 6.44 43.34Q7.91 39.74 10.43 37.31Q12.95 34.88 16.31 33.62Q19.67 32.36 23.51 32.36L23.51 32.36Q28.97 32.36 31.97 34.10Q34.97 35.84 34.97 38.48ZM49.31 40.76L49.31 43.04L59.51 43.04Q59.81 43.64 60.14 44.54Q60.47 45.44 60.47 46.52L60.47 46.52Q60.47 48.44 59.60 49.28Q58.73 50.12 57.35 50.12L57.35 50.12L49.73 50.12L49.73 69.74Q49.13 69.92 48.05 70.07Q46.97 70.22 45.65 70.22L45.65 70.22Q42.95 70.22 41.75 69.35Q40.55 68.48 40.55 65.96L40.55 65.96L40.55 40.46Q40.55 37.52 41.54 35.36Q42.53 33.20 44.27 31.85Q46.01 30.50 48.35 29.84Q50.69 29.18 53.39 29.18L53.39 29.18Q57.65 29.18 59.72 30.29Q61.79 31.40 61.79 33.92L61.79 33.92Q61.79 35.06 61.34 35.93Q60.89 36.80 60.29 37.28L60.29 37.28Q59.15 36.92 57.86 36.68Q56.57 36.44 54.95 36.44L54.95 36.44Q52.19 36.44 50.75 37.43Q49.31 38.42 49.31 40.76L49.31 40.76ZM94.85 38.48L94.85 38.48Q94.85 39.86 94.13 40.91Q93.41 41.96 92.45 42.56L92.45 42.56Q90.89 41.54 89.06 40.76Q87.23 39.98 84.71 39.98L84.71 39.98Q79.91 39.98 77.21 43.01Q74.51 46.04 74.51 51.62L74.51 51.62Q74.51 57.38 77.36 60.29Q80.21 63.20 85.19 63.20L85.19 63.20Q87.77 63.20 89.60 62.51Q91.43 61.82 92.99 60.86L92.99 60.86Q93.89 61.58 94.46 62.69Q95.03 63.80 95.03 65.18L95.03 65.18Q95.03 66.38 94.40 67.43Q93.77 68.48 92.21 69.20L92.21 69.20Q91.01 69.80 88.97 70.31Q86.93 70.82 83.93 70.82L83.93 70.82Q79.91 70.82 76.43 69.68Q72.95 68.54 70.37 66.20Q67.79 63.86 66.32 60.23Q64.85 56.60 64.85 51.62L64.85 51.62Q64.85 46.94 66.32 43.34Q67.79 39.74 70.31 37.31Q72.83 34.88 76.19 33.62Q79.55 32.36 83.39 32.36L83.39 32.36Q88.85 32.36 91.85 34.10Q94.85 35.84 94.85 38.48Z%22></path></svg>" />
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap" rel="stylesheet">
+  <title>Code for Chill</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -39,5 +43,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+</body>
+
 </html>
