@@ -1,11 +1,13 @@
+import { RouterProvider } from 'react-router-dom';
 import './App.css';
-import NavBar from './Shared/NavBar/NavBar';
+import { router } from './Routes/PublicRoutes/PublicRoutes';
+
+
 
 function App() {
   return (
     <div className="App">
-      <NavBar></NavBar>
-      
+      <RouterProvider router={router}></RouterProvider>
     </div>
   );
 }

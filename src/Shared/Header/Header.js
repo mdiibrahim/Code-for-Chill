@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 
-const NavBar = () => {
+const Header = () => {
     return (
         <div>
-            <Router>
-                <div className="navbar bg-base-100">
+            
+                <div className="navbar bg-base-300 shadow-xl">
                     <div className="navbar-start">
                         <div className="dropdown">
                             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -19,7 +19,7 @@ const NavBar = () => {
                                 <Link className="btn btn-outline btn-accent" to='/register'>Register</Link>
                             </ul>
                         </div>
-                        <Link className="btn btn-ghost normal-case text-3xl"><img src="Code for Chill-1.png" className='w-10' alt="" />Code for Chill</Link>
+                        <Link to='/' className="btn btn-ghost normal-case text-3xl"><img src="Code for Chill-1.png" className='w-10' alt=""  />Code for Chill</Link>
                     </div>
                     <div className="navbar-center hidden lg:grid grid-cols-3">
                         <Link className='mx-auto btn btn-ghost normal-case  text-xl' to='/courses'>Courses</Link>
@@ -31,9 +31,9 @@ const NavBar = () => {
                         <Link className="btn btn-outline btn-success" to='/register'>Register</Link>
                     </div>
                 </div>
-            </Router>
+            
         </div>
     );
 };
 
-export default NavBar;
+export default Header;
