@@ -27,8 +27,8 @@ const Header = () => {
                         <Link className='mx-auto btn btn-ghost normal-case  text-xl' to='/frequently-asked-questions' >FAQ's</Link>
                     </div>
                     <div className="navbar-end  hidden lg:flex">
-                        <Link className="btn btn-outline btn-success mr-2" to='/login'>Sign In</Link>
-                        <Link className="btn btn-outline btn-success" to='/register'>Register</Link>
+                        <Link className="btn  btn-outline mr-2" to='/login'>Sign In</Link>
+                        <Link className="btn  btn-outline" to='/register'>Register</Link>
                     </div>
                 </div>
             
