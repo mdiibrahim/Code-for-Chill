@@ -21,6 +21,7 @@ import FAQ from '../../Pages/FAQ/FAQ';
                 {
                     path: '/courses',
                     element: <Courses></Courses>,
+                    loader: () => fetch('http://localhost:5000/courses'),
                 },
                 {
                     path: '/courses/:id',

@@ -55,7 +55,7 @@ const Login = () => {
                                 </label>
                                 <input type="text" placeholder="password" className="input input-bordered" name='password' />
                                 <label className="label">
-                                    <small>Not registered? <Link to='/register' className='link link-primary'>Register now</Link> </small>
+                                    <small>Not registered? <Link to='/register' className="link link-accent">Register now</Link> </small>
                                 </label>
                             </div>
                             <div className="form-control mt-6">

@@ -15,6 +15,12 @@ const Header = () => {
                             <Link className='mb-3' to='/courses'>Courses</Link>
                             <Link className='mb-3' to='/blogs'>Blogs</Link>
                             <Link to='/frequently-asked-questions' className='mb-3'>FAQ's </Link>
+                            <div className="form-control">
+                                <label className="label cursor-pointer">
+                                    <span className="label-text">Mode</span>
+                                    <input type="checkbox" className="toggle toggle-primary" />
+                                </label>
+                            </div>
                             <Link className="btn btn-outline btn-success mb-3" to='/login'>Sign In</Link>
                             <Link className="btn btn-outline btn-accent" to='/register'>Register</Link>
                         </ul>
