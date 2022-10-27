@@ -10,7 +10,7 @@ const Home = () => {
                     <div className="max-w-md">
                         <h1 className="mb-5 text-6xl font-bold">Hey Coders!!!</h1>
                         <p className="mb-5">Wanna chilling with coding? Then join us. We are committed to learning the code in a efficient manner, effective way with enjoy.</p>
-                        <button className="btn btn-outline">Get Started for free <BsFillArrowRightCircleFill className='text-lg ml-3'/></button>
+                        <button className="btn btn-outline">Join for free <BsFillArrowRightCircleFill className='text-lg ml-3'/></button>
                     </div>
                 </div>
             </div>

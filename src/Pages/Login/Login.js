@@ -3,19 +3,26 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import { BsGithub } from 'react-icons/bs';
+import { useContext } from 'react';
+import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 const Login = () => {
-    const [user, setUser] = useState(null);
+    const {logIn} = useContext(AuthContext)
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
+        logIn(email, password)
+            .then(result => {
+                console.log(result.user);
+            })
+        .catch(error=>console.error(error))
         
     }
     return (
         <div>
-            <div className="hero mx-auto my-20 w-9/12 bg-amber-700">
-                <div className="hero-content flex-col lg:flex-row-reverse lg:justify-between">
+            <div className="hero mx-auto my-20 w-9/12 bg-zinc-500">
+                <div className="hero-content flex-col-reverse  lg:flex-row-reverse lg:justify-between">
                     <form onSubmit={handleSubmit} className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <div className="card-body">
                             <div className="form-control">
