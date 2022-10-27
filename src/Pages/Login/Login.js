@@ -1,12 +1,14 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import { BsGithub } from 'react-icons/bs';
 import { useContext } from 'react';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import toast from 'react-hot-toast';
 const Login = () => {
-    const {logIn} = useContext(AuthContext)
+    const { logIn } = useContext(AuthContext);
+    const navigate = useNavigate();
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -14,9 +16,25 @@ const Login = () => {
         const password = form.password.value;
         logIn(email, password)
             .then(result => {
-                console.log(result.user);
+                const user = result.user;
+                form.reset();
+                if (user.emailVerified) {
+                    toast('Good Job!', {
+                        icon: '👏',
+                      });
+                    navigate('/');
+                }
+                else {
+                    toast.error(
+                        "Please sir/maam, go to your registered email. If it is not found in inbox then check it out on spam. Then verify your mail. After that you can log in our website. Thank you!!!",
+                        {
+                          duration: 6000,
+                        }
+                      );
+                }
             })
-        .catch(error=>console.error(error))
+            .catch(error => console.error(error))
+        
         
     }
     return (

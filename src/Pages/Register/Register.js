@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { BsGithub } from 'react-icons/bs';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, emailVerify } = useContext(AuthContext);
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -16,9 +17,19 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const user = result.user;
-console.log(user)
+                console.log(user)
+                emailVerify()
+                    .then(() => { })
+                    .catch(error => console.error(error));
+                    toast.success(
+                        "Please sir/maam, Go to your given email. If it is not found in inbox then check it out on spam. Then verify your mail. After that, you can be registered user of our website. Thank you for your registration!!!",
+                        {
+                          duration: 6000,
+                        }
+                      );
             })
             .catch(error => console.error(error));
+
     }
 
 
@@ -33,9 +44,9 @@ console.log(user)
                                 <label className="label">
                                     <span className="label-text">Full Name</span>
                                 </label>
-                                <input type="text" placeholder="Your name" className="input input-bordered" name='fullName' required  />
+                                <input type="text" placeholder="Your name" className="input input-bordered" name='fullName' required />
                             </div>
-                           
+
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
