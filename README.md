@@ -14,3 +14,5 @@ iv)DaisyUI: (https://daisyui.com/components/) for more functionality and compone
 v)React-router-dom: (https://reactrouter.com/en/main) for the better performance rounting and single page application,
 
 vi)React-hot-toast: (https://react-hot-toast.com/) to show a better UX
+
+vii)jspdf: (https://www.npmjs.com/package/jspdf) to generate  pdf

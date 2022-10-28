@@ -10,7 +10,7 @@ const CourseCards = ({ allCourseNames }) => {
                         <div className='w-9/12 mx-auto' key={(singleCourseNames.id)}>
                             <div className="card mb-5 h-96 xl:h-1/2 bg-base-100  shadow-xl image-full" >
                             <figure><img src={singleCourseNames.img } className='w-full' alt="programming" /></figure>
-                            <div className="card-body justify-center">
+                            <div className="card-body items-center justify-center">
                                 <h2 className="card-title md:text-8xl">{singleCourseNames.courseName}</h2>
                                 <div className='md:text-base text-sm '>
                                     {

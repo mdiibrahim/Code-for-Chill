@@ -37,7 +37,7 @@ const AuthProvider = ({ children }) => {
         setToaster(true);
         return signInWithPopup(auth, googleProvider);
     }
-    const logInWithGithub=() => {
+    const registerWithGithub=() => {
         return signInWithPopup(auth, githubProvider);
     }
     useEffect(() => {
@@ -61,7 +61,7 @@ const AuthProvider = ({ children }) => {
         toaster,
         profileUpdate,
         registerWithGoogle,
-        logInWithGithub,
+        registerWithGithub,
         setUser
     }
     
