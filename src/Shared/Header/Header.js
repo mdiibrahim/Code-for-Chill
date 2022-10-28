@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useContext } from 'react';
-import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
