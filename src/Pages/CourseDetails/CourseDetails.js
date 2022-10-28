@@ -3,8 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import {GrUserManager} from 'react-icons/gr'
 const CourseDetails = () => {
     const data = useLoaderData();
-    console.log(data)
-    const { id, img, enroll, price, courseDetails, title, courseName } = data[0];
+    const {img, enroll, price, courseDetails, title, courseName } = data[0];
 
     return (
         <div>
