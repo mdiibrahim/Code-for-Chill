@@ -1,16 +1,25 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-import {GrUserManager} from 'react-icons/gr'
+import { GrUserManager } from 'react-icons/gr'
+import jsPDF from 'jspdf';
 const CourseDetails = () => {
     const data = useLoaderData();
     const {id,img, enroll, price, courseDetails, title, courseName } = data[0];
-
+    const  downloadCoursePDF = ()=>{
+        let doc = new jsPDF('landscape', 'px', 'a4', 'false');
+        doc.addImage(img,56, 50, 500, 400);
+        doc.addPage();
+        doc.text(280,15,courseName);
+        doc.text(10,40,courseDetails);
+        doc.text(10,40,courseDetails);
+        doc.save('course-outline.pdf');
+     }
     return (
         <div>
             <div className="card  bg-base-300 mx-auto my-20 shadow-xl p-20 border border-gray-300 w-4/5">
                 <div className='card-actions justify-between'>
                     <h1 className='md:text-4xl'>{title}</h1>
-                    <button className="btn btn-primary">Download</button>
+                    <button className="btn btn-primary" onClick={downloadCoursePDF}>Download</button>
                 </div>
                 
                 <figure className="px-10 pt-10">

@@ -35,7 +35,7 @@ const Header = () => {
                                     user?.uid ?
                                         <nav>
                                             <Link className="btn  btn-outline mr-2" onClick={handleLogOut}>Sign Out</Link>
-                                            <div data-tip={user.displayName} className='tooltip tooltip-left' >
+                                            <div data-tip={user.displayName} className='tooltip   tooltip-accent tooltip-right lg:tooltip-left' >
                                                 <img src={user?.photoURL} alt="" className='rounded-full w-12 ' />
                                             </div>
                                         </nav>
@@ -69,7 +69,7 @@ const Header = () => {
                             user?.uid ?
                                 <nav>
                                     <Link className="btn  btn-outline mr-2" onClick={handleLogOut}>Sign Out</Link>
-                                    <div data-tip={user.displayName} className='tooltip   tooltip-accent tooltip-bottom ' >
+                                    <div data-tip={user.displayName} className='tooltip   tooltip-accent tooltip-right lg:tooltip-left' >
 
                                         <img src={user?.photoURL} alt="" className='rounded-full w-12 ' />
                                     </div>

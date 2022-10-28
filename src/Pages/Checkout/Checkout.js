@@ -13,7 +13,7 @@ const Checkout = () => {
                     <p>Course Name: {courseName}</p>
                     <p>Price: ${ price}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-outline"><Link to='/'>Go Courses</Link></button>
+                        <button className="btn btn-outline"><Link to='/courses'>Go Courses</Link></button>
                     </div>
                 </div>
             </div>
