@@ -11,6 +11,8 @@ const Header = () => {
                 setUser(null);
              })
             .catch(error => console.log(error))
+        
+        
     }
     return (
         <nav>
@@ -31,10 +33,10 @@ const Header = () => {
                                     <input type="checkbox" className="toggle" />
                                 </label>
                             </nav>
-                            <nav>
+                            <nav >
                                 {
                                     user?.uid ?
-                                        <nav>
+                                        <nav className='items-center justify-center' >
                                             <Link className="btn  btn-outline mr-2" onClick={handleLogOut}>Sign Out</Link>
                                             <div data-tip={user.displayName} className='tooltip justify-center  tooltip-accent tooltip-right lg:tooltip-left ' >
                                                 <img src={user?.photoURL} alt="" className='rounded-full w-12 ' />
@@ -68,9 +70,9 @@ const Header = () => {
                     <nav>
                         {
                             user?.uid ?
-                                <nav>
+                                <nav >
                                     <Link className="btn  btn-outline mr-2" onClick={handleLogOut}>Sign Out</Link>
-                                    <div data-tip={user.displayName} className='tooltip   tooltip-accent tooltip-right lg:tooltip-left' >
+                                    <div data-tip={user.displayName} className='tooltip items-center justify-center   tooltip-accent tooltip-right lg:tooltip-left' >
                                         
                                     <img src={user?.photoURL} alt="" className='rounded-full w-12 ' />
                                     </div>

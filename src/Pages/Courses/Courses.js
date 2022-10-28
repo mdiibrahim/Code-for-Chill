@@ -4,13 +4,11 @@ import CourseCards from '../CourseCards/CourseCards';
 import CourseSideBar from '../CourseSideBar/CourseSideBar';
 
 const Courses = () => {
-    const courses = useLoaderData();
-    
-
+    const allCourseNames = useLoaderData();
     return (
         <div className='grid lg:grid-cols-3 gap-6 mt-9'>
-            <CourseSideBar allCourseNames={courses} ></CourseSideBar>
-            <CourseCards allCourseNames={courses}  ></CourseCards>
+            <CourseSideBar allCourseNames={allCourseNames} ></CourseSideBar>
+            <CourseCards allCourseNames={allCourseNames}  ></CourseCards>
         </div>
     );
 };

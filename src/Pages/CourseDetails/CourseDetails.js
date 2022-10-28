@@ -27,7 +27,7 @@ const CourseDetails = () => {
     return (
         <div>
             <div className="card  bg-base-300 mx-auto my-20 shadow-xl p-20 border border-gray-300 w-4/5">
-                <div className='card-actions justify-between'>
+                <div className='card-actions md:justify-between justify-center items-center'>
                     <h1 className='md:text-4xl'>{title}</h1>
                     <button className="btn btn-primary" onClick={downloadCoursePDF}>Download</button>
                 </div>
@@ -38,14 +38,16 @@ const CourseDetails = () => {
                 <div className="card-body w-full items-center text-center">
                     <h2 className="card-title sm:text-7xl">{ courseName}</h2>
                     <p className=''>{courseDetails}</p>
-                    <div className="card-actions bg-slate-400 w-full rounded-xl p-4 justify-between mt-5">
+                    <div className="card-actions bg-slate-400  rounded-xl p-4 justify-between  mt-5 lg:w-full md:w-5/6">
                         <div>
                             <h3>Purchase: ${price}</h3>
                             <h3>Enrollment Students: <GrUserManager className='inline mr-1 ml-3' />{ enroll}</h3>
                         </div>
-                        
-                        <button className="btn btn-outline"><Link to={`/checkout/courses/${id}`}>Wanna Access?</Link></button>
+                        <div>
+                            <button className="btn btn-outline"><Link to={`/checkout/courses/${id}`}>Wanna Access?</Link></button>
                         <button className="btn btn-outline"><Link to='/courses'>Back to the courses</Link></button>
+                        </div>
+                        
                         
                     </div>
                 </div>

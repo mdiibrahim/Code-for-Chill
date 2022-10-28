@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
 const Login = () => {
-    const { logIn, setToaster, registerWithGoogle, registerWithGithub,setUser } = useContext(AuthContext);
+    const { logIn, setToaster, registerWithGoogle, registerWithGithub,setUser, profileUpdate, emailVerify} = useContext(AuthContext);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -35,22 +35,48 @@ const Login = () => {
             .finally(() => setToaster(false));
 
     }
+    
+    
     const handleRegisterWithGoogle = () => {
         registerWithGoogle()
             .then(result => {
-
-                setUser(result.user);
+                
+                const user = result.user;
+                if (user.uid) {
+                    toast('Good Job!', {
+                        icon: '👏',
+                    });
+                    setUser(user);
+                    navigate(from, { replace: true });
+                }
+                else {
+                    toast.error("Please sir/maam,go to your register or email inbox. If it is not found in inbox then check it out on spam. Then verify your mail. After that you can log in our website. Thank you!!!");
+                }
+                
 
             })
             .catch(error => console.log(error))
+            .finally(() => setToaster(false));
     }
     const handleRegisterWithGithub = () => {
         registerWithGithub()
             .then(result => {
-                setUser(result.user);
+        
+                const user = result.user;
+                if (user.uid) {
+                    toast('Good Job!', {
+                        icon: '👏',
+                    });
+                    setUser(user);
+                    navigate(from, { replace: true });
+                }
+                else {
+                    toast.error("Please sir/maam, go to your register or email inbox. If it is not found in inbox then check it out on spam. Then verify your mail. After that you can log in our website. Thank you!!!");
+                }
 
             })
             .catch(error => console.log(error))
+            .finally(() => setToaster(false));
     }
     return (
         <div>

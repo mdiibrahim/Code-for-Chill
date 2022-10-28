@@ -23,12 +23,12 @@ import Error from '../../Pages/Error/Error';
                 {
                     path: '/courses',
                     element: <Courses></Courses>,
-                    loader: () => fetch('https://code-for-chill-server-side.vercel.app/'),
+                    loader: () => fetch('https://code-for-chill-server-side.vercel.app/courses'),
                 },
                 {
                     path: '/courses/:id',
                     element: <CourseDetails></CourseDetails>,
-                    loader:({params})=>fetch(`https://code-for-chill-server-side.vercel.app/${params.id}`),
+                    loader:({params})=>fetch(`https://code-for-chill-server-side.vercel.app/courses/${params.id}`),
                     
                 },
                 {
