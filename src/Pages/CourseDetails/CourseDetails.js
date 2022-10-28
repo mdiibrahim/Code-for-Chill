@@ -7,12 +7,22 @@ const CourseDetails = () => {
     const {id,img, enroll, price, courseDetails, title, courseName } = data[0];
     const  downloadCoursePDF = ()=>{
         let doc = new jsPDF('landscape', 'px', 'a4', 'false');
-        doc.addImage(img,56, 50, 500, 400);
+        doc.addImage(img,'jpg',56, 50, 500, 400);
         doc.addPage();
-        doc.text(280,15,courseName);
-        doc.text(10,40,courseDetails);
-        doc.text(10,40,courseDetails);
-        doc.save('course-outline.pdf');
+        doc.text(60,60,title);
+        doc.text(60,80,(courseDetails.slice(0,100)));
+        doc.text(60,100,(courseDetails.slice(100,200)));
+        doc.text(60,120,(courseDetails.slice(200,300)));
+        doc.text(60,140,(courseDetails.slice(400,500)));
+        doc.text(60,160,(courseDetails.slice(500,600)));
+        doc.text(60,180,(courseDetails.slice(600,700)));
+        doc.text(60,200,(courseDetails.slice(700,800)));
+        doc.text(60,220,(courseDetails.slice(900,1000)));
+        doc.text(60,240,(courseDetails.slice(1000,1100)));
+        doc.text(60,260,(courseDetails.slice(1100,1200)));
+        doc.text(60,280,(courseDetails.slice(1200,1300)));
+        doc.text(60,300,(courseDetails.slice(1400,1500)));
+        doc.save('course-details.pdf');
      }
     return (
         <div>

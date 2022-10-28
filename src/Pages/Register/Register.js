@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useState } from 'react';
+
 import toast from 'react-hot-toast';
 import { BsGithub } from 'react-icons/bs';
 import { FcGoogle } from 'react-icons/fc';
@@ -7,7 +7,9 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const Register = () => {
-    const { createUser, emailVerify, profileUpdate } = useContext(AuthContext);
+    const {
+        createUser, emailVerify, profileUpdate,  registerWithGoogle, setUser
+    } = useContext(AuthContext);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -18,13 +20,13 @@ const Register = () => {
         const fullName = form.fullName.value;
         createUser(email, password)
             .then(result => {
-                const user = result.user;
+
                 form.reset('');
                 handleEmailVerify();
                 handleProfileUpdate(photoURL, fullName);
             })
-            .catch(error =>  console.log(error) )
-        
+            .catch(error => console.log(error))
+
         const handleProfileUpdate = (photoURL, fullName) => {
             const profile = {
                 displayName: fullName,
@@ -43,17 +45,29 @@ const Register = () => {
                 .catch(error => console.log(error))
         }
 
+
     }
+    const handleRegisterWithGoogle = () => {
+        registerWithGoogle()
+            .then(result => {
+                const user = result.user;
+                setUser(user)
+            })
+            .catch(error => console.log(error))
+    }
+
 
 
     return (
         <div>
             <div className="hero mx-auto my-20 w-9/12 bg-zinc-500">
                 <div className="hero-content flex-col-reverse lg:flex-row-reverse lg:justify-between">
-                    <form onSubmit={handleSubmit} className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+
+                    <div  className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
 
                         <div className="card-body">
-                            <div className="form-control">
+                            <form onSubmit={handleSubmit}>
+<div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Full Name</span>
                                 </label>
@@ -81,19 +95,21 @@ const Register = () => {
                                 <label className="label">
                                     <small>Have an account? <Link to='/login' className='link link-accent'>Sign In</Link> </small>
                                 </label>
-                                
+                                <div className="form-control mt-6">
+                                    <button className="btn  btn-outline">Sign up</button>
+                                </div>
                             </div>
-                            <div className="form-control mt-6">
-                                <button className="btn  btn-outline">Sign up</button>
-                            </div>
+                            </form>
+                            
+
                             <div className="form-control mt-1">
-                                <button className="btn  btn-outline btn-success"><FcGoogle className='text-2xl mr-2' /> Sign Up with Google</button>
+                                <button className="btn  btn-outline btn-success"><FcGoogle className='text-2xl mr-2' onClick={handleRegisterWithGoogle} /> Sign Up with Google</button>
                             </div>
                             <div className="form-control mt-1">
                                 <button className="btn btn-outline"><BsGithub className='text-2xl mr-2' />Sign Up with Github</button>
                             </div>
                         </div>
-                    </form>
+                    </div>
                     <div className="text-center lg:text-left">
                         <h1 className="text-xl font-medium ">Sign Up <br /><strong className='text-3xl font-bold'>Code for Chill</strong></h1>
                         <p className="py-6">Learning the code with feel and chill</p>
