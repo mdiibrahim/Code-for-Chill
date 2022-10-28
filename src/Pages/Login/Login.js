@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
 const Login = () => {
-    const { logIn, setToaster, registerWithGoogle, registerWithGithub,setUser, profileUpdate, emailVerify} = useContext(AuthContext);
+    const { logIn, setToaster, registerWithGoogle, registerWithGithub,setUser} = useContext(AuthContext);
 
     const navigate = useNavigate();
     const location = useLocation();
