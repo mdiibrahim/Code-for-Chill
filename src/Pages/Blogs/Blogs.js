@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blogs = () => {
     return (
-        <div className='w-9/12 mx-auto my-20'>
+        <div className='w-9/12 mx-auto my-20 min-h-screen'>
             <h2 className='text-2xl'>Developer's question answer:</h2>
             <div tabIndex={0} className="collapse collapse-plus border border-base-300 rounded-box mb-4">
                 <div className="collapse-title text-xl font-medium">
