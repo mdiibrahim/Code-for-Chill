@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { BsGithub } from 'react-icons/bs';
 import { FcGoogle } from 'react-icons/fc';
@@ -6,29 +7,41 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const Register = () => {
-    const { createUser, emailVerify } = useContext(AuthContext);
+    const { createUser, emailVerify, profileUpdate } = useContext(AuthContext);
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        const picURL = form.picURL.value;
+        const photoURL = form.photoURL.value;
         const fullName = form.fullName.value;
         createUser(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user)
-                emailVerify()
-                    .then(() => { })
-                    .catch(error => console.error(error));
-                    toast.success(
-                        "Please sir/maam, Go to your given email. If it is not found in inbox then check it out on spam. Then verify your mail. After that, you can be registered user of our website. Thank you for your registration!!!",
-                        {
-                          duration: 6000,
-                        }
-                      );
+                form.reset('');
+                handleEmailVerify();
+                handleProfileUpdate(photoURL, fullName);
             })
-            .catch(error => console.error(error));
+            .catch(error =>  console.log(error) )
+        
+        const handleProfileUpdate = (photoURL, fullName) => {
+            const profile = {
+                displayName: fullName,
+                photoURL: photoURL
+            }
+            profileUpdate(profile)
+                .then(() => { })
+                .catch(error => console.log(error))
+        }
+        const handleEmailVerify = () => {
+            emailVerify()
+                .then(() => {
+                    toast.success(
+                        "Please sir/maam, Go to your given email. If it is not found in inbox then check it out on spam. Then verify your mail. After that, you can be registered user of our website. Thank you for your registration!!!",);
+                })
+                .catch(error => console.log(error))
+        }
 
     }
 
@@ -58,16 +71,17 @@ const Register = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type="text" placeholder="password" className="input input-bordered" name='password' required />
-                                
+
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Photo</span>
                                 </label>
-                                <input type="text" placeholder="Your profile picture URL" className="input input-bordered" name='picURL' required />
+                                <input type="text" placeholder="Your profile picture URL" className="input input-bordered" name='photoURL' required />
                                 <label className="label">
                                     <small>Have an account? <Link to='/login' className='link link-accent'>Sign In</Link> </small>
                                 </label>
+                                
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn  btn-outline">Sign up</button>

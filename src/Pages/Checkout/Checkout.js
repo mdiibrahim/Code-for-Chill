@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Checkout = () => {
     const data = useLoaderData();
@@ -7,7 +7,16 @@ const Checkout = () => {
     const { title, price, courseName } = data[0];
     return (
         <div>
-            <h2>{title}</h2>
+            <div className="justify-center mx-auto  items-center  w-1/4 min-h-screen my-20">
+                <div className="card-body">
+                    <h2 className="card-title">{title}</h2>
+                    <p>Course Name: {courseName}</p>
+                    <p>Price: ${ price}</p>
+                    <div className="card-actions justify-end">
+                        <button className="btn btn-outline"><Link to='/'>Go Courses</Link></button>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
