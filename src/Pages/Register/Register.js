@@ -58,15 +58,16 @@ const Register = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type="text" placeholder="password" className="input input-bordered" name='password' required />
-                                <label className="label">
-                                    <small>Have an account? <Link to='/register' className='link link-accent'>Sign In</Link> </small>
-                                </label>
+                                
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Photo</span>
                                 </label>
                                 <input type="text" placeholder="Your profile picture URL" className="input input-bordered" name='picURL' required />
+                                <label className="label">
+                                    <small>Have an account? <Link to='/login' className='link link-accent'>Sign In</Link> </small>
+                                </label>
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn  btn-outline">Sign up</button>

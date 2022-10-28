@@ -9,6 +9,8 @@ import Blogs from '../../Pages/Blogs/Blogs'
 import Login from '../../Pages/Login/Login';
 import Register from '../../Pages/Register/Register';
 import FAQ from '../../Pages/FAQ/FAQ';
+import Checkout from '../../Pages/Checkout/Checkout';
+import Error from '../../Pages/Error/Error';
     export const router = createBrowserRouter([
         {
             path: '/',
@@ -21,13 +23,18 @@ import FAQ from '../../Pages/FAQ/FAQ';
                 {
                     path: '/courses',
                     element: <Courses></Courses>,
-                    loader: () => fetch('https://code-for-chill-server-side.vercel.app/courses'),
+                    loader: () => fetch('http://localhost:5000/courses'),
                 },
                 {
                     path: '/courses/:id',
                     element: <CourseDetails></CourseDetails>,
-                    loader:({params})=>fetch(`https://code-for-chill-server-side.vercel.app/courses/${params.id}`),
+                    loader:({params})=>fetch(`http://localhost:5000/courses/${params.id}`),
                     
+                },
+                {
+                    path: '/checkout/courses/:id',
+                    element: <PrivateRoutes><Checkout></Checkout></PrivateRoutes>,
+                    loader:({params})=>fetch(`http://localhost:5000/courses/${params.id}`),
                 },
                 {
                     path: '/blogs',
@@ -45,6 +52,11 @@ import FAQ from '../../Pages/FAQ/FAQ';
                     path: '/register',
                     element: <Register></Register>,
                 },
+                {
+                    path: '/*',
+                    element: <Error></Error>
+                }
+                
                 
             ]
         },

@@ -1,9 +1,9 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import {GrUserManager} from 'react-icons/gr'
 const CourseDetails = () => {
     const data = useLoaderData();
-    const {img, enroll, price, courseDetails, title, courseName } = data[0];
+    const {id,img, enroll, price, courseDetails, title, courseName } = data[0];
 
     return (
         <div>
@@ -16,16 +16,18 @@ const CourseDetails = () => {
                 <figure className="px-10 pt-10">
                     <img src={img} alt="Shoes" className="w-screen rounded-xl" />
                 </figure>
-                <div className="card-body items-center text-center">
+                <div className="card-body w-full items-center text-center">
                     <h2 className="card-title sm:text-7xl">{ courseName}</h2>
-                    <p>{courseDetails}</p>
+                    <p className=''>{courseDetails}</p>
                     <div className="card-actions bg-slate-400 w-full rounded-xl p-4 justify-between mt-5">
                         <div>
                             <h3>Purchase: ${price}</h3>
                             <h3>Enrollment Students: <GrUserManager className='inline mr-1 ml-3' />{ enroll}</h3>
                         </div>
                         
-                        <button className="btn btn-primary">Buy Now</button>
+                        <button className="btn btn-outline"><Link to={`/checkout/courses/${id}`}>Wanna Access?</Link></button>
+                        <button className="btn btn-outline"><Link to='/courses'>Back to the courses</Link></button>
+                        
                     </div>
                 </div>
             </div>
