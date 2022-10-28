@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 const Footer = () => {
     return (
-        <div className=''>
+        
             <footer className=''>
-                <footer className="footer p-10  bg-base-200 text-base-content">
+                <footer className="footer p-10 bg-base-200 text-base-content ">
                     <div>
                         <span className="footer-title">Services</span>
                         <Link to='/courses'>Courses</Link>
@@ -38,7 +37,7 @@ const Footer = () => {
                     </div>
                 </footer>
             </footer>
-        </div>
+        
     );
 };
 
