@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+
     return (
         <div>
 
@@ -18,7 +19,7 @@ const Header = () => {
                             <div className="form-control">
                                 <label className="label cursor-pointer">
                                     <span className="label-text">Mode</span>
-                                    <input type="checkbox" className="toggle toggle-primary" />
+                                    <input type="checkbox" className="toggle" />
                                 </label>
                             </div>
                             <Link className="btn btn-outline btn-success mb-3" to='/login'>Sign In</Link>
@@ -36,9 +37,10 @@ const Header = () => {
                     <div className="form-control">
                         <label className="label cursor-pointer">
                             <span className="label-text">Mode</span>
-                            <input type="checkbox" className="toggle toggle-primary" />
+                            <input type="checkbox" className="toggle" />
                         </label>
                     </div>
+                    
                     <Link className="btn  btn-outline mr-2" to='/login'>Sign In</Link>
                     <Link className="btn  btn-outline" to='/register'>Join</Link>
                 </div>

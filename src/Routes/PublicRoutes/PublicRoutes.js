@@ -25,9 +25,9 @@ import FAQ from '../../Pages/FAQ/FAQ';
                 },
                 {
                     path: '/courses/:id',
-                    element: <PrivateRoutes>
-                        <CourseDetails></CourseDetails>
-                    </PrivateRoutes>,
+                    element: <CourseDetails></CourseDetails>,
+                    loader:({params})=>fetch(`http://localhost:5000/courses/${params.id}`),
+                    
                 },
                 {
                     path: '/blogs',
