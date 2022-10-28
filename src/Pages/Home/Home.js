@@ -11,7 +11,7 @@ const Home = () => {
                     <div className="max-w-md">
                         <h1 className="mb-5 text-6xl font-bold">Hey Coders!!!</h1>
                         <p className="mb-5">Wanna chilling with coding? Then join us. We are committed to learn the programming in a efficient manner, effective way with enjoy.</p>
-                        <button className="btn btn-outline"><Link to='/courses'>Join for free </Link><BsFillArrowRightCircleFill className='text-lg ml-3'/></button>
+                        <button className="btn btn-outline"><Link to='/register'>Join for free </Link><BsFillArrowRightCircleFill className='text-lg ml-3'/></button>
                     </div>
                 </div>
             </div>
