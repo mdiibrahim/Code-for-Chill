@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const Header = () => {
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut,setUser } = useContext(AuthContext);
     const handleLogOut = () => {
         logOut()
-            .then(() => { })
+            .then(() => {
+                setUser(null);
+             })
             .catch(error => console.log(error))
     }
     return (
@@ -34,7 +36,7 @@ const Header = () => {
                                     user?.uid ?
                                         <nav>
                                             <Link className="btn  btn-outline mr-2" onClick={handleLogOut}>Sign Out</Link>
-                                            <div data-tip={user.displayName} className='tooltip   tooltip-accent tooltip-right lg:tooltip-left' >
+                                            <div data-tip={user.displayName} className='tooltip justify-center  tooltip-accent tooltip-right lg:tooltip-left ' >
                                                 <img src={user?.photoURL} alt="" className='rounded-full w-12 ' />
                                             </div>
                                         </nav>

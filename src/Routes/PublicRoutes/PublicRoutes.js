@@ -23,18 +23,18 @@ import Error from '../../Pages/Error/Error';
                 {
                     path: '/courses',
                     element: <Courses></Courses>,
-                    loader: () => fetch('http://localhost:5000/courses'),
+                    loader: () => fetch('https://code-for-chill-server-side.vercel.app/'),
                 },
                 {
                     path: '/courses/:id',
                     element: <CourseDetails></CourseDetails>,
-                    loader:({params})=>fetch(`http://localhost:5000/courses/${params.id}`),
+                    loader:({params})=>fetch(`https://code-for-chill-server-side.vercel.app/${params.id}`),
                     
                 },
                 {
                     path: '/checkout/courses/:id',
                     element: <PrivateRoutes><Checkout></Checkout></PrivateRoutes>,
-                    loader:({params})=>fetch(`http://localhost:5000/courses/${params.id}`),
+                    loader:({params})=>fetch(`https://code-for-chill-server-side.vercel.app/courses/${params.id}`),
                 },
                 {
                     path: '/blogs',

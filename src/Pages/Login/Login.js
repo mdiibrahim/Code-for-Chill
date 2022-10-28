@@ -24,6 +24,7 @@ const Login = () => {
                     toast('Good Job!', {
                         icon: '👏',
                     });
+                    setUser(user);
                     navigate(from, { replace: true });
                 }
                 else {
